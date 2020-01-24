@@ -1,0 +1,459 @@
+{% extends 'extra.html' %}
+{% block content %}
+{% load static %}
+
+<!--<html class="no-js" lang="zxx">-->
+
+<!--<head>-->
+<!--	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">-->
+<!--	<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--	<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--	<meta name="description" content="">-->
+<!--	<meta name="keywords" content="">-->
+<!--	<meta name="robots" content="index,follow">-->
+
+<!--    <title>MHN Informatics</title>-->
+
+<!--	<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">-->
+<!--	<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap-select.min.css">-->
+<!--    <link href="assets/plugins/icons/css/icons.css" rel="stylesheet">-->
+<!--	<link rel="stylesheet" href="assets/plugins/nice-select/css/nice-select.css">-->
+<!--    <link href="assets/plugins/animate/animate.css" rel="stylesheet">-->
+<!--    <link href="assets/plugins/bootstrap/css/bootsnav.css" rel="stylesheet">-->
+<!--    -->
+<!--    <link href="assets/plugins/slick-slider/slick.css" rel="stylesheet">	-->
+<!--    <link href="assets/css/style.css" rel="stylesheet">-->
+<!--	<link href="assets/css/responsiveness.css" rel="stylesheet">-->
+<!--    <link href="assets/css/skin/default.css" rel="stylesheet">-->
+<!--    <link href="assets/css/main.css" rel="stylesheet">-->
+<!--	-->
+<!--    -->
+<!--    <style>-->
+<!--        body, section {-->
+<!--    background: #f1f1f1;-->
+<!--}-->
+<!--    </style>-->
+<!--	</head>-->
+<!--	-->
+<!--	<body>-->
+<!--		-->
+<!--        <header class="main_header">-->
+<!--				<div class="cm_left_header">-->
+<!--					<a href="index.html"><span>MHN Informatics</span></a>-->
+<!--				</div>-->
+<!--				<div class="nav_main">-->
+<!--					<ul class="left-navbar">-->
+<!--						<li>-->
+<!--							<form method="post" class="search_bar">-->
+<!--								<input type="text" placeholder="Search videos, movies, and more" name="keyword" class="form-control">-->
+<!--								<span class="search-icon"><i class="fa fa-search"></i></span>-->
+<!--							</form>-->
+<!--						</li>-->
+<!--					</ul>-->
+<!--					<ul class="right-navbar sai">-->
+<!--                        <li class="upload_video">-->
+<!--                            <a href="index.html"><img src="img/logo.png"></a>-->
+<!--                        </li>-->
+<!--						<li>-->
+<!--							<a href="index.html">Home</a>-->
+<!--						</li>-->
+<!--						<li>-->
+<!--							<a href="step1.html">Create profiles</a>-->
+<!--						</li>-->
+<!--						<li>-->
+<!--							<a class="saiii" data-toggle="modal" data-target="#signin" class="login" href="#"><img src="img/user.png"> Sign in</a>-->
+<!--						</li>-->
+<!--						-->
+<!--						<li class="dropdown hoe-rheader-submenu message-notification left-min-30">-->
+<!--							<a href="#" class="dropdown-toggle" data-toggle="dropdown">-->
+<!--								<span><img class="img-circle user_img" src="img/12345.png"></span>-->
+<!--							</a>-->
+<!--							<ul class="dropdown-menu ">-->
+<!--							-->
+<!--								-->
+<!--								<li><a href="#"><i class="fa fa-power-off"></i>Logout</a></li>-->
+<!--							</ul>-->
+<!--						</li>-->
+<!--					</ul>-->
+<!--				</div>-->
+<!--			</header>-->
+   
+				<section>
+                            
+                            
+                            
+              <div class="main-banner" style="background-image:url({% static 'img/sai2.jpg' %});">
+			<div class="container">
+                <div class="row">
+				<div class="col-md-12 col-sm-12">
+                    
+                    
+                  
+				    
+					<form action="{% url 'profile' %}" method= "post">
+						{% csrf_token %}
+						<fieldset class="home-form-1 icon-field">
+						
+							<div style="padding-right: 10px;" class="col-md-offset-1 col-md-2 col-sm-2">
+								<div class="form-group">
+									<div class="icon-addon addon-lg">
+                                         <label>Gender</label>
+										<select class="wide form-control" name="gender">
+											<option></option>
+											<option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+										</select>
+									</div>
+								</div>
+							</div>
+                            
+                         <div style="padding-left: 10px;padding-right: 10px;" class="col-md-2 col-sm-2">
+								<div class="form-group">
+									<div class="icon-addon addon-lg">
+                                    <label>Age</label>
+                                    
+                                    
+                                            <select class="wide form-control" name="age">
+												<option></option>
+                                                {% for i in ask %}
+                                                <option value="{{i.id}}">{{i.age}}</option>
+                                                {% endfor %}
+
+
+                                            </select>
+									</div>
+								</div>
+							</div>
+							
+								
+							<div style="padding-left: 10px;padding-right: 10px;" class="col-md-2 col-sm-2">
+								<div class="form-group">
+									<div class="icon-addon addon-lg">
+                                         <label>state</label>
+										<input type="text" class="form-control" name="state"  placeholder="Enter State">
+
+									</div>
+								</div>
+							</div>
+							
+									<div style="padding-left: 10px;padding-right: 10px;" class="col-md-2 col-sm-2">
+								<div class="form-group">
+									<div class="icon-addon addon-lg">
+                                         <label>city</label>
+										<input type="text" class="form-control" name="city" placeholder="Enter State">
+
+									</div>
+								</div>
+							</div>
+							<div style="padding-left: 10px;" class="col-md-2 col-sm-2 ">
+<!--								<a href="{% url 'profile' %}" style="margin-top: 28px;" type="submit" class="btn theme-btn cl-white seub-btn">Search</a>-->
+								<input type= "submit"  value="search" class="btn theme-btn cl-white seub-btn">
+							</div>
+								
+						</fieldset>
+					</form>
+					
+					
+					
+				</div>
+                </div>
+			</div>
+		</div>
+		<!-- ======================= End Banner ===================== -->
+		
+		<!-- ====================== Advance Features ================= -->
+                            
+                            
+         
+                            
+                            <section class="why_choose_us">
+			<div class="container">
+				
+				<div class="row aos-init aos-animate" data-aos="fade-up">
+					<div class="col-md-12">
+						<div class="heading">
+							<h2>Find your Special Someone</h2>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+				
+					<div class="col-md-4 col-sm-4">
+						<div class="work-process step-2">
+							<span class="process-icon">
+								<i class="fa"><img src='{% static "img/user1.png" %}'></i>
+								<span class="process-count cl-white">1</span>
+							</span>
+							<h4>Sign up</h4>
+							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+						</div>
+                        
+					</div>
+					
+					<div class="col-md-4 col-sm-4">
+						
+                        <div class="work-process">
+							<span class="process-icon">
+								<i class="fa"><img style="width: 50px;" src='{% static "img/user2.png" %}'></i>
+								<span class="process-count cl-white">2</span>
+							</span>
+							<h4>Connect</h4>
+							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+						</div>
+					</div>
+					
+					<div class="col-md-4 col-sm-4">
+						<div class="work-process step-3">
+							<span class="process-icon">
+								<i class="fa"><img style="width: 50px;" src='{% static "img/user3.png" %}'></i>
+								<span class="process-count cl-white">3</span>
+							</span>
+							<h4>Interact</h4>
+							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+		</section>
+				</section>
+					{% endblock %}
+   
+<!--		<footer class="dark-bg footer" style="background-color:black;">-->
+<!--			<div class="">-->
+<!--				-->
+<!--				&lt;!&ndash; Row Start &ndash;&gt;-->
+<!--				<div class="row">-->
+<!--				-->
+<!--					<div class="col-md-12 col-sm-12">-->
+<!--						<div class="row">-->
+<!--							<div class="col-md-3 col-sm-3">-->
+<!--								<h4>Need Help?</h4>-->
+<!--								<ul >-->
+<!--									<li><a href="#">Member Login</a></li>-->
+<!--									<li><a href="#">Sign Up</a></li>-->
+<!--									<li><a href="#">Partner Search</a></li>-->
+<!--									<li><a href="#">How to Use CM Matrimony</a></li>-->
+<!--									<li><a href="#">Premium Memberships</a></li>-->
+<!--									<li><a href="#">Customer Support</a></li>-->
+<!--								</ul>-->
+<!--							</div>-->
+<!--							<div class="col-md-3 col-sm-3">-->
+<!--								<h4>Company</h4>-->
+<!--								<ul>-->
+<!--									<li><a href="#">About Us</a></li>-->
+<!--									<li><a href="#">CM Matrimony Blog</a></li>-->
+<!--									<li><a href="#">Affiliate Program</a></li>-->
+<!--									<li><a href="#">Careers</a></li>-->
+<!--									<li><a href="#">Awards & Recognition</a></li>-->
+<!--									<li><a href="#">Contact Us</a></li>-->
+<!--								</ul>-->
+<!--							</div>-->
+<!--							<div class="col-md-3 col-sm-3">-->
+<!--								<h4>Privacy & You</h4>-->
+<!--								<ul>-->
+<!--									<li><a href="#">Terms of Use</a></li>-->
+<!--									<li><a href="#">Privacy Policy</a></li>-->
+<!--									<li><a href="#">Be Safe Online</a></li>-->
+<!--									<li><a href="#">Report Misuse</a></li>-->
+<!--								</ul>-->
+<!--							</div>-->
+<!--                            -->
+<!--                            <div class="col-md-3 col-sm-3">-->
+<!--								<h4>More</h4>-->
+<!--								<ul>-->
+<!--									<li><a href="#">VIP Shaadi</a></li>-->
+<!--									<li><a href="#">Select Shaadi</a></li>-->
+<!--									<li><a href="#">Shaadi Centres</a></li>-->
+<!--									<li><a href="#">Wedding Planning</a></li>-->
+<!--									<li><a href="#">Success Stories</a></li>-->
+<!--								</ul>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					-->
+<!--					-->
+<!--					-->
+<!--				</div>-->
+<!--				-->
+<!--				-->
+<!--			</div>-->
+<!--		</footer>-->
+<!--		-->
+<!--		&lt;!&ndash; Apply Job Popup &ndash;&gt;-->
+<!--		<div class="modal fade" id="apply-job" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">-->
+<!--			<div class="modal-dialog">-->
+<!--				<div class="modal-content" id="myModalLabel2">-->
+<!--					<div class="modal-body">-->
+<!--						<div class="text-center">-->
+<!--							<img src="assets/img/logo.png" class="img-responsive" alt="">-->
+<!--							<h4 class="mrg-0">Front End Designer</h4>-->
+<!--							<span> 2708 Scenic Way, Sutter</span>-->
+<!--						</div>-->
+<!--						-->
+<!--						<form>-->
+
+<!--							<div class="form-group">-->
+<!--								<label>Name</label>-->
+<!--								<input type="text" class="form-control" placeholder="Name">-->
+<!--							</div>-->
+
+<!--							<div class="form-group">-->
+<!--								<label>Email</label>-->
+<!--								<input type="email" class="form-control" placeholder="Email">-->
+<!--							</div>-->
+<!--					-->
+
+<!--							<div class="form-group">-->
+<!--								<label>Phone</label>-->
+<!--								<input type="text" class="form-control" placeholder="Phone">-->
+<!--							</div>-->
+
+<!--							<div class="form-group">-->
+<!--								<label>Upload CV</label>-->
+<!--								<div class="custom-file-upload">-->
+<!--									<input type="file" id="file" name="myfiles[]" multiple />-->
+<!--								</div>-->
+<!--							</div>-->
+<!--					-->
+<!--							<div class="form-group">-->
+<!--								<textarea class="form-control height-120" placeholder="Pase CV"></textarea>-->
+<!--							</div>-->
+
+<!--							<div class="form-group text-center">-->
+<!--								<button type="button" class="btn theme-btn btn-m">Save & Apply</button>-->
+<!--							</div>-->
+<!--							-->
+<!--						</form>-->
+<!--							-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>   -->
+<!--		&lt;!&ndash; Apply Job Popup &ndash;&gt;-->
+<!--		-->
+<!--		&lt;!&ndash; Sign Up Window Code &ndash;&gt;-->
+<!--		<div class="modal fade login_modal" id="signin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">-->
+<!--			<div class="modal-dialog">-->
+<!--				<div class="modal-content" id="myModalLabel1">-->
+<!--					<div class="modal-body">-->
+<!--                        -->
+<!--                     &lt;!&ndash;   -->
+<!--                        <h4>Crazy Mar</h4>&ndash;&gt;-->
+<!--						-->
+<!--						<ul class="nav nav-tabs nav-advance theme-bg" role="tablist">-->
+<!--							<li class="nav-item active">-->
+<!--								<a class="nav-link" data-toggle="tab" href="#employer" role="tab">Login</a>-->
+<!--							</li>-->
+<!--							<li class="nav-item">-->
+<!--								<a class="nav-link" data-toggle="tab" href="#candidate" role="tab">Sign Up</a>-->
+<!--							</li>-->
+<!--						</ul>-->
+<!--							-->
+<!--						<div class="tab-content">-->
+<!--						-->
+<!--							<div class="tab-pane fade in show active" id="employer" role="tabpanel">-->
+<!--								<form>-->
+<!--                                    -->
+<!--                                    <h5>Login with your Email Id</h5>-->
+<!--									-->
+<!--									<div class="form-group">-->
+<!--										<label>User Name</label>-->
+<!--										<input type="text" class="form-control">-->
+<!--									</div>-->
+<!--									<div class="form-group">-->
+<!--										<label>Email</label>-->
+<!--										<input type="password" class="form-control">-->
+<!--									</div>-->
+<!--									<div class="form-group">-->
+<!--										<label>Phone Number</label>-->
+<!--										<input type="password" class="form-control">-->
+<!--									</div>-->
+<!--									-->
+<!--									<div class="form-group">-->
+<!--										<span class="custom-checkbox">-->
+<!--											<input type="checkbox" id="4">-->
+<!--											<label for="4"></label>Remember me-->
+<!--										</span>-->
+<!--										<a href="#" title="Forget" class="fl-right">Forgot Password?</a>-->
+<!--									</div>-->
+<!--									<div class="form-group text-center">-->
+<!--										<button type="button" class="btn theme-btn full-width btn-m">Sign In </button>-->
+<!--									</div>-->
+<!--									<div class="form-group text-center">-->
+<!--										<button type="button" class="btn theme-btn full-width btn-m color1">Sign In with Facebook </button>-->
+<!--									</div>-->
+<!--                                    <div class="form-group text-center">-->
+<!--										<button type="button" class="btn theme-btn full-width btn-m color2">Sign In with Google</button>-->
+<!--									</div>-->
+<!--								</form>-->
+<!--								-->
+<!--							</div>-->
+<!--							&lt;!&ndash;/.Panel 1&ndash;&gt;-->
+<!--							-->
+<!--							&lt;!&ndash; Candidate Panel 2&ndash;&gt;-->
+<!--							<div class="tab-pane fade" id="candidate" role="tabpanel">-->
+<!--								<form>-->
+<!--                                    -->
+<!--                                    <h5>Register Now</h5>-->
+<!--									-->
+<!--									<div class="form-group">-->
+<!--										<label>First name</label>-->
+<!--										<input type="text" class="form-control">-->
+<!--									</div>-->
+<!--									-->
+<!--									<div class="form-group">-->
+<!--										<label>Last name</label>-->
+<!--										<input type="password" class="form-control">-->
+<!--									</div><div class="form-group">-->
+<!--										<label>Email</label>-->
+<!--										<input type="password" class="form-control">-->
+<!--									</div>-->
+<!--									<div class="form-group">-->
+<!--										<label>Phone Number</label>-->
+<!--										<input type="password" class="form-control">-->
+<!--									</div>-->
+<!--									<div class="form-group">-->
+<!--										<label>Password</label>-->
+<!--										<input type="password" class="form-control">-->
+<!--									</div>-->
+<!--									-->
+<!--									<div class="form-group text-center">-->
+<!--										<button type="button" class="btn theme-btn full-width btn-m">LogIn </button>-->
+<!--									</div>-->
+<!--									-->
+<!--								</form>-->
+<!--								-->
+<!--								-->
+<!--								-->
+<!--							</div>-->
+<!--							&lt;!&ndash;/.Panel 2&ndash;&gt;-->
+<!--							-->
+<!--						</div>-->
+<!--						&lt;!&ndash; Tab panels &ndash;&gt;-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>   -->
+<!--    -->
+<!--				</section>-->
+<!--        -->
+<!--		-->
+<!--		 -->
+<!--		<script src="assets/js/jquery.min.js"></script>-->
+<!--		<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>-->
+<!--		<script src="assets/plugins/bootstrap/js/bootsnav.js"></script>-->
+<!--		<script src="assets/js/viewportchecker.js"></script>-->
+<!--		<script src="assets/plugins/slick-slider/slick.js"></script>-->
+<!--		<script src="assets/plugins/bootstrap/js/wysihtml5-0.3.0.js"></script>-->
+<!--		<script src="assets/plugins/bootstrap/js/bootstrap-wysihtml5.js"></script>-->
+<!--		-->
+<!--		<script src="assets/plugins/nice-select/js/jquery.nice-select.min.js"></script>-->
+<!--		<script src="assets/js/custom.js"></script>-->
+<!--		<script src="assets/js/main.js"></script>-->
+<!--		-->
+<!--    </body>-->
+
+<!--</html>-->

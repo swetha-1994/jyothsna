@@ -1,0 +1,194 @@
+{% extends 'extra.html' %}
+{% block content %}
+{% load static %}
+
+<!--<html class="no-js" lang="zxx">-->
+
+<!--<head>-->
+<!--	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">-->
+<!--	<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--	<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--	<meta name="description" content="">-->
+<!--	<meta name="keywords" content="">-->
+<!--	<meta name="robots" content="index,follow">-->
+
+<!--    <title>MHN Informatics</title>-->
+
+<!--	<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">-->
+<!--	<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap-select.min.css">-->
+<!--    <link href="assets/plugins/icons/css/icons.css" rel="stylesheet">-->
+<!--	<link rel="stylesheet" href="assets/plugins/nice-select/css/nice-select.css">-->
+<!--    <link href="assets/plugins/animate/animate.css" rel="stylesheet">-->
+<!--    <link href="assets/plugins/bootstrap/css/bootsnav.css" rel="stylesheet">-->
+<!--    -->
+<!--    <link href="assets/plugins/slick-slider/slick.css" rel="stylesheet">	-->
+<!--    <link href="assets/css/style.css" rel="stylesheet">-->
+<!--	<link href="assets/css/responsiveness.css" rel="stylesheet">-->
+<!--    <link href="assets/css/skin/default.css" rel="stylesheet">-->
+<!--    <link href="assets/css/main.css" rel="stylesheet">-->
+<!--	-->
+<!--    -->
+<!--    <style>-->
+<!--        body, section {-->
+<!--    background: #f1f1f1;-->
+<!--}-->
+<!--    </style>-->
+<!--	</head>-->
+<!--	-->
+<!--	<body>-->
+<!--		-->
+<!--        <header class="main_header">-->
+<!--				<div class="cm_left_header">-->
+<!--					<a href="index.html"><span>MHN Informatics</span></a>-->
+<!--				</div>-->
+<!--				<div class="nav_main">-->
+<!--					<ul class="left-navbar">-->
+<!--						<li>-->
+<!--							<form method="post" class="search_bar">-->
+<!--								<input type="text" placeholder="Search videos, movies, and more" name="keyword" class="form-control">-->
+<!--								<span class="search-icon"><i class="fa fa-search"></i></span>-->
+<!--							</form>-->
+<!--						</li>-->
+<!--					</ul>-->
+<!--					<ul class="right-navbar sai">-->
+<!--                        <li class="upload_video">-->
+<!--                            <a href="index.html"><img src="img/logo.png"></a>-->
+<!--                        </li>-->
+<!--						<li>-->
+<!--							<a href="index.html">Home</a>-->
+<!--						</li>-->
+<!--						<li>-->
+<!--							<a href="step1.html">Create profiles</a>-->
+<!--						</li>-->
+<!--						<li>-->
+<!--							<a class="saiii" data-toggle="modal" data-target="#signin" class="login" href="#"><img src="img/user.png"> Sign in</a>-->
+<!--						</li>-->
+<!--						-->
+<!--						<li class="dropdown hoe-rheader-submenu message-notification left-min-30">-->
+<!--							<a href="#" class="dropdown-toggle" data-toggle="dropdown">-->
+<!--								<span><img class="img-circle user_img" src="img/12345.png"></span>-->
+<!--							</a>-->
+<!--							<ul class="dropdown-menu ">-->
+<!--							-->
+<!--								-->
+<!--								<li><a href="#"><i class="fa fa-power-off"></i>Logout</a></li>-->
+<!--							</ul>-->
+<!--						</li>-->
+<!--					</ul>-->
+<!--				</div>-->
+<!--			</header>-->
+				<section>
+                            <section class="list_jobs">
+			<div class="container">
+			
+                
+                <div class="row">
+							<div class="col-sm-7">
+								
+							</div>
+							
+							
+						</div>
+                
+				<div class="row">
+				
+                    <div class="no_padding_left col-md-offset-2 col-sm-8">
+
+
+                        {% for i in lk %}
+						<div class="job-verticle-list">
+							<div class="vertical-job-card">
+								
+								<div class="vertical-job-body">
+									<div class="row">
+										<div class="col-md-9 col-sm-8">
+                                            
+											<ul class="can-skils">
+                                                <div class="vrt-job-cmp-logo">
+                                                 <a href="job-detail.html">
+                                                     <span style="margin-top: 8px; display: block;" class="custom-checkbox">
+                                                        <input type="checkbox" id="1">
+                                                        <label for="1"></label>
+                                                     </span>
+                                                </a>
+                                                </div>
+												<li><h5><a href="#">1</a></h5> 
+                         
+                                                </li>
+												
+											</ul>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-4 profile_basic_pic">
+                                                    <div class="user_image">
+                                                        <img src='{{i.image.url}}'>
+                                                    </div>
+                                                    
+                                                </div>
+                                                
+                                                <div class="profile_basic">
+
+                                                    <label class="label">First Name</label><div class="info">{{i.fname}}</div>
+                                                        <div class="clearfix"></div><div class="spacer_4"></div>
+
+
+
+                                                        <label class="label">Second Name</label><div class="info">{{i.lname}}</div>
+                                                    <div class="clearfix"></div><div class="spacer_4"></div>
+
+                                                    <label class="label">gender</label><div class="info">{{i.gender}}</div>
+                                                        <div class="clearfix"></div><div class="spacer_4"></div>
+
+                                                                        <label class="label">Age</label><div class="info">{{i.agee}}</div>
+                                                    <div class="clearfix"></div><div class="spacer_4"></div>
+
+
+
+                                                    <label class="label">state</label><div class="info">{{i.state}}</div>
+                                                        <div class="clearfix"></div><div class="spacer_4"></div>
+
+
+                                                                            <label class="label">city</label><div class="info">{{i.city}}</div>
+                                                            <div class="clearfix"></div><div class="spacer_4"></div>
+
+                                                        <label class="label">Email</label><div class="info">{{i.mail}}</div>
+                                                    <div class="clearfix"></div>
+                                                    
+                                                    
+                                                        <label class="label">Phone number</label><div class="info">{{i.mob}}</div>
+                                                        <div class="clearfix"></div>
+                                                    
+                                                </div>
+                                            </div>
+										</div>
+										
+									</div>
+								</div>
+								<div class="vertical-job-footer">
+									<div class="row">
+										<div class="col-md-7 col-sm-7">
+											<div style="margin-top: 12px;" class="cmp-job-rating">
+												<p><span>About</span>: {{i.about}}</p>
+											</div>
+										</div>
+                                        
+										<div class="col-md-5 col-sm-3">
+											<div class="cmp-job-review">
+												<a href="{% url 'viewprofile' i.id %}" class="btn-job theme-btn job-apply">View full profile</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+                        {% endfor %}
+
+
+
+						
+					</div>
+                    </div>				
+			</div>
+		</section>
+					{% endblock %}
+                            
